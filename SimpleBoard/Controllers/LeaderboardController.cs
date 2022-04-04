@@ -35,15 +35,14 @@ namespace SimpleBoard.Controllers
         [HttpGet("{name}")]
         public BoardEntry GetNamed(string name)
         {
-            var entry = _context.Entries.OrderByDescending(x => x.Score)
-                .Select((e, i) => new { entry = e, index = i }).FirstOrDefault(x => x.entry.Name.Equals(name));
+            var index = _context.Entries.OrderByDescending(x => x.Score).ToList().FindIndex(x => x.Name.Equals(name));
+            var entry = _context.Entries.FirstOrDefault(x => x.Name.Equals(name));
             if (entry == null)
             {
                 return new BoardEntry { Name = name, Score = 0 };
             }
-
-            entry.entry.Id = entry.index;
-            return entry.entry;
+            entry.Id = index;
+            return entry;
         }
 
         [HttpPost]

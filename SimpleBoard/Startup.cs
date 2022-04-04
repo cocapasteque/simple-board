@@ -19,6 +19,13 @@ namespace SimpleBoard
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options => options.AddPolicy("Origin", o =>
+            {
+                o.AllowAnyOrigin();
+                o.AllowAnyHeader();
+                o.AllowAnyMethod();
+            }));
+
             services.AddControllers();
             var con = BoardContext.GetDbConnectionString("board");
             services.AddDbContext<BoardContext>(
@@ -33,6 +40,8 @@ namespace SimpleBoard
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors("Origin");
+            
             app.UseHttpsRedirection();
 
             app.UseRouting();

@@ -31,6 +31,7 @@ namespace SimpleBoard
             var con = BoardContext.GetDbConnectionString(Environment.GetEnvironmentVariable("DB_NAME") ?? "board");
             services.AddDbContext<BoardContext>(
                 options => options.UseMySql(con, ServerVersion.AutoDetect(con)));
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,6 +51,8 @@ namespace SimpleBoard
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+            
+            BoardContext.UpdateDatabase<BoardContext>(app);
         }
     }
 }

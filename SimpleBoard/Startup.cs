@@ -1,3 +1,4 @@
+using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -27,7 +28,7 @@ namespace SimpleBoard
             }));
 
             services.AddControllers();
-            var con = BoardContext.GetDbConnectionString("board");
+            var con = BoardContext.GetDbConnectionString(Environment.GetEnvironmentVariable("DB_NAME") ?? "board");
             services.AddDbContext<BoardContext>(
                 options => options.UseMySql(con, ServerVersion.AutoDetect(con)));
         }

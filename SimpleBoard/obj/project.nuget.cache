@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qbKD59pocN9lliNNmkL1y59OGiUvx69DhrpDCAL5SXogJTYWpae72SWqO/x6TLth7WgDH6AMtYBlEidwDMcxfA==",
+  "dgSpecHash": "0yjw+ys8EVMsASIFx3zonfMLONVUtlcILifRaXh8j1OVk9/ATahkxuLnGcnZPFzQ84hoFb0XUp4I69dNplrAVQ==",
   "success": true,
-  "projectFilePath": "D:\\perso\\ld-50\\SimpleBoard\\SimpleBoard\\SimpleBoard.csproj",
+  "projectFilePath": "D:\\perso\\simple-board\\SimpleBoard\\SimpleBoard.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Antoine\\.nuget\\packages\\bouncycastle.netcore\\1.8.5\\bouncycastle.netcore.1.8.5.nupkg.sha512",
     "C:\\Users\\Antoine\\.nuget\\packages\\dnsclient\\1.6.0\\dnsclient.1.6.0.nupkg.sha512",

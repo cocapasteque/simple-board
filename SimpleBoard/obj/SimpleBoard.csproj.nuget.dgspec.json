@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\perso\\ld-50\\SimpleBoard\\SimpleBoard\\SimpleBoard.csproj": {}
+    "D:\\perso\\simple-board\\SimpleBoard\\SimpleBoard.csproj": {}
   },
   "projects": {
-    "D:\\perso\\ld-50\\SimpleBoard\\SimpleBoard\\SimpleBoard.csproj": {
+    "D:\\perso\\simple-board\\SimpleBoard\\SimpleBoard.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\perso\\ld-50\\SimpleBoard\\SimpleBoard\\SimpleBoard.csproj",
+        "projectUniqueName": "D:\\perso\\simple-board\\SimpleBoard\\SimpleBoard.csproj",
         "projectName": "SimpleBoard",
-        "projectPath": "D:\\perso\\ld-50\\SimpleBoard\\SimpleBoard\\SimpleBoard.csproj",
+        "projectPath": "D:\\perso\\simple-board\\SimpleBoard\\SimpleBoard.csproj",
         "packagesPath": "C:\\Users\\Antoine\\.nuget\\packages\\",
-        "outputPath": "D:\\perso\\ld-50\\SimpleBoard\\SimpleBoard\\obj\\",
+        "outputPath": "D:\\perso\\simple-board\\SimpleBoard\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

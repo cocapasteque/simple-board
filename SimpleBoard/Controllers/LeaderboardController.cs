@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 
 namespace SimpleBoard.Controllers
 {
@@ -11,15 +13,9 @@ namespace SimpleBoard.Controllers
     [Route("[controller]")]
     public class LeaderboardController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
-
         private readonly ILogger<LeaderboardController> _logger;
         private readonly BoardContext _context;
-
-
+        
         public LeaderboardController(ILogger<LeaderboardController> logger, BoardContext context)
         {
             _logger = logger;
@@ -52,15 +48,23 @@ namespace SimpleBoard.Controllers
         }
 
         [HttpPost]
-        public BoardEntry Post([FromBody] BoardEntry entry)
+        public ActionResult<BoardEntry> Post([FromBody] string encryptedEntry)
         {
+            var stringEntry = CipherService.Decrypt(encryptedEntry, Environment.GetEnvironmentVariable("SECRET_KEY"));
+            var entry = JsonConvert.DeserializeObject<BoardEntry>(stringEntry);
+
+            if (entry == null)
+            {
+                return BadRequest("Cannot deserialize entry object");
+            }
+            
             entry.Name = entry.Name.ToLower();
             var previous = _context.Entries.FirstOrDefault(x => x.Name.Equals(entry.Name.ToLower()));
             if (previous != null)
             {
                 if (previous.Score > entry.Score)
                 {
-                    return previous;
+                    return Ok(previous);
                 }
                 else
                 {
@@ -70,7 +74,7 @@ namespace SimpleBoard.Controllers
 
             _context.Entries.Add(entry);
             _context.SaveChanges();
-            return entry;
+            return Ok(entry);
         }
     }
 }

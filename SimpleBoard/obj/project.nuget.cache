@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "0yjw+ys8EVMsASIFx3zonfMLONVUtlcILifRaXh8j1OVk9/ATahkxuLnGcnZPFzQ84hoFb0XUp4I69dNplrAVQ==",
+  "dgSpecHash": "wf4aQcq+uPM8EVTMNX+48OU7gJsuM8AGiKHGGM/g59M+Gp9nkXm/0tahJs+Fi42EdnK/r0rgQWdRDceqVRhXXg==",
   "success": true,
   "projectFilePath": "D:\\perso\\simple-board\\SimpleBoard\\SimpleBoard.csproj",
   "expectedPackageFiles": [
@@ -30,6 +30,7 @@
     "C:\\Users\\Antoine\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\Antoine\\.nuget\\packages\\mysql.data\\8.0.28\\mysql.data.8.0.28.nupkg.sha512",
     "C:\\Users\\Antoine\\.nuget\\packages\\mysqlconnector\\2.1.2\\mysqlconnector.2.1.2.nupkg.sha512",
+    "C:\\Users\\Antoine\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\Antoine\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\6.0.1\\pomelo.entityframeworkcore.mysql.6.0.1.nupkg.sha512",
     "C:\\Users\\Antoine\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\Antoine\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",

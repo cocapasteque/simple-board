@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\perso\\simple-board\\SimpleBoard\\SimpleBoard.csproj": {}
+    "D:\\perso\\simple-board\\EnryptionTest\\EnryptionTest.csproj": {}
   },
   "projects": {
-    "D:\\perso\\simple-board\\SimpleBoard\\SimpleBoard.csproj": {
+    "D:\\perso\\simple-board\\EnryptionTest\\EnryptionTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\perso\\simple-board\\SimpleBoard\\SimpleBoard.csproj",
-        "projectName": "SimpleBoard",
-        "projectPath": "D:\\perso\\simple-board\\SimpleBoard\\SimpleBoard.csproj",
+        "projectUniqueName": "D:\\perso\\simple-board\\EnryptionTest\\EnryptionTest.csproj",
+        "projectName": "EnryptionTest",
+        "projectPath": "D:\\perso\\simple-board\\EnryptionTest\\EnryptionTest.csproj",
         "packagesPath": "C:\\Users\\Antoine\\.nuget\\packages\\",
-        "outputPath": "D:\\perso\\simple-board\\SimpleBoard\\obj\\",
+        "outputPath": "D:\\perso\\simple-board\\EnryptionTest\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -42,34 +42,6 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "dependencies": {
-            "DnsClient": {
-              "target": "Package",
-              "version": "[1.6.0, )"
-            },
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[6.0.3, )"
-            },
-            "Microsoft.EntityFrameworkCore.Design": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[6.0.3, )"
-            },
-            "MySql.Data": {
-              "target": "Package",
-              "version": "[8.0.28, )"
-            },
-            "Newtonsoft.Json": {
-              "target": "Package",
-              "version": "[13.0.1, )"
-            },
-            "Pomelo.EntityFrameworkCore.MySql": {
-              "target": "Package",
-              "version": "[6.0.1, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -81,9 +53,6 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

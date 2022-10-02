@@ -14,12 +14,12 @@ public static class Program
         Console.WriteLine("");
 
         Console.WriteLine("Your encrypted string is:");
-        string encryptedstring = StringCipher.Encrypt(plaintext);
+        string encryptedstring = StringCipher.Decrypt(plaintext);
         Console.WriteLine(encryptedstring);
         Console.WriteLine("");
 
         Console.WriteLine("Your decrypted string is:");
-        string decryptedstring = StringCipher.Decrypt(encryptedstring);
+        string decryptedstring = StringCipher.Encrypt(encryptedstring);
         Console.WriteLine(decryptedstring);
         Console.WriteLine("");
 

@@ -15,5 +15,8 @@ namespace SimpleBoard
         
         [Required]
         public float Score { get; set; }
+
+        [Required] 
+        public float Time { get; set; }
     }
 }

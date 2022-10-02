@@ -27,7 +27,9 @@ namespace SimpleBoard.Controllers
         [HttpGet]
         public IEnumerable<BoardEntry> Get()
         {
-            return _context.Entries.OrderByDescending(x => x.Score).Take(3);
+            return _context.Entries
+                .OrderByDescending(x => x.Score)
+                .ThenByDescending(x => x.Time).Take(3);
         }
 
         [HttpGet("all")]
@@ -39,11 +41,14 @@ namespace SimpleBoard.Controllers
         [HttpGet("{name}")]
         public BoardEntry GetNamed(string name)
         {
-            var index = _context.Entries.OrderByDescending(x => x.Score).ToList().FindIndex(x => x.Name.Equals(name.ToLower()));
+            var index = _context.Entries
+                .OrderByDescending(x => x.Score)
+                .ThenByDescending(x => x.Time)
+                .ToList().FindIndex(x => x.Name.Equals(name.ToLower()));
             var entry = _context.Entries.FirstOrDefault(x => x.Name.Equals(name.ToLower()));
             if (entry == null)
             {
-                return new BoardEntry { Name = name.ToLower(), Score = 0 };
+                return new BoardEntry { Name = name.ToLower(), Score = 0, Time = 0 };
             }
             entry.Id = index;
             return entry;
@@ -70,7 +75,7 @@ namespace SimpleBoard.Controllers
             var previous = _context.Entries.FirstOrDefault(x => x.Name.Equals(entry.Name.ToLower()));
             if (previous != null)
             {
-                if (previous.Score > entry.Score)
+                if (previous.Score > entry.Score || (previous.Score == entry.Score && previous.Time > entry.Time))
                 {
                     return Ok(previous);
                 }

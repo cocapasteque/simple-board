@@ -48,10 +48,10 @@ namespace SimpleBoard.Controllers
         }
 
         [HttpPost]
-        public ActionResult<BoardEntry> Post([FromBody] EncryptedEntry request)
+        public ActionResult<BoardEntry> Post(string request)
         {
-            Console.WriteLine("Got " + request.Entry);
-            var stringEntry = CipherService.Decrypt(request.Entry, Environment.GetEnvironmentVariable("SECRET_KEY"));
+            Console.WriteLine("Got " + request);
+            var stringEntry = CipherService.Decrypt(request, Environment.GetEnvironmentVariable("SECRET_KEY"));
             
             Console.WriteLine("Unencrypted: " + stringEntry);
             var entry = JsonConvert.DeserializeObject<BoardEntry>(stringEntry);

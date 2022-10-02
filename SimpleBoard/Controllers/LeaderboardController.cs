@@ -82,7 +82,7 @@ namespace SimpleBoard.Controllers
 
         public class EncryptedEntry
         {
-            public string Entry { get; set; }
+            [JsonProperty("entry")] public string Entry { get; set; }
         }
     }
 }

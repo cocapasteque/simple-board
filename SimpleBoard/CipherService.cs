@@ -29,6 +29,7 @@ public static class CipherService
     }
     public static string Decrypt(string cipherText, string key)
     {
+        Console.WriteLine("Key: " + key);
         cipherText = cipherText.Replace(" ", "+");
         
         var cipherBytes = Convert.FromBase64String(cipherText);

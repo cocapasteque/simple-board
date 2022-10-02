@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -48,8 +50,11 @@ namespace SimpleBoard.Controllers
         }
 
         [HttpPost]
-        public ActionResult<BoardEntry> Post(string request)
+        public async Task<ActionResult<BoardEntry>> Post()
         {
+            using var reader = new StreamReader(Request.Body, Encoding.UTF8);
+            var request = await reader.ReadToEndAsync();
+            
             Console.WriteLine("Got " + request);
             var stringEntry = CipherService.Decrypt(request, Environment.GetEnvironmentVariable("SECRET_KEY"));
             
@@ -76,7 +81,8 @@ namespace SimpleBoard.Controllers
             }
 
             _context.Entries.Add(entry);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
+            
             return Ok(entry);
         }
 
